@@ -1,0 +1,96 @@
+/* Estilo global */
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* contenedor principal */
+  .login-container{
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+    width: 100%;
+    max-width: 400px;
+    margin: 20px;
+    border-radius: 20px;
+  }
+  
+  /* Encabezado */
+  h1, h2, h3 {
+    color: #004d40; 
+    text-align: center;
+  }
+  
+  label {
+    font-weight: bold;
+    color: #004d40; 
+    text-align: center;
+  }
+  /* Formularios */
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 10px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #004d40;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  button:hover {
+    background-color: #00332a; 
+  }
+  
+  /* Navegación */
+  nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    background-color: #004d40;
+    margin: 0;
+  }
+  
+  nav ul li {
+    margin: 10px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* imagenes - fondo */
+  
+  body {
+    background-image: url("../img/codigo_verificacion.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+  }
+

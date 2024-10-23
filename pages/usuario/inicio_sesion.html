@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar Sesión - EPS CitasExpress</title>
+    <link rel="stylesheet" href="../../css/inicio_sesion.css" />
+  </head>
+  <style>
+    #loading-spinner {
+      display: none;
+      border: 4px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 4px solid #3498db;
+      width: 30px;
+      height: 30px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    #error-message {
+      display: none;
+      color: red;
+    }
+  </style>
+  <body>
+    <div class="login-container">
+      <h1>Iniciar Sesión</h1>
+      <form action=" " method="post">
+        <label for="usuario">Correo:</label><br />
+        <input type="text" id="usuario" name="usuario" required /><br /><br />
+        <label for="contrasena">Contraseña:</label><br />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+        /><br /><br />
+        <input type="submit" value="Iniciar Sesión" id="login" />
+        <div id="loading-spinner"></div>
+        <div id="error-message">
+          Credenciales incorrectas, por favor intenta nuevamente.
+        </div>
+      </form>
+      <p>
+        ¿Olvidaste tu contraseña?
+        <a href="./codigo_verificacion.html">Recupérala aquí →</a>
+      </p>
+      <br />
+      <p>
+        ¿No tienes una cuenta? <a href="./Registro.html">Regístrate aquí →</a>
+      </p>
+    </div>
+
+    <script src="../../js/usuario/iniciar_sesion.js"></script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitudes y Autorizaciones - Citas Express</title>
+    <link rel="stylesheet" href="../../css/form.css">
+</head>
+<body>
+  
+        <!-- Sección para ver el estado de una cita -->
+        <section>
+            <h1>Citas Express</h1>
+            <h2>Solicitudes y Autorizaciones</h2>
+            <p>verificar el estado de una cita existente y enviar otras solicitudes relacionadas con tu cuenta.</p>
+    
+            <h3>Consultar Estado de Cita</h3>
+            <form action="" method="GET">
+                <label for="codigo">Código de Cita:</label>
+                <input type="text" id="codigo" name="codigo" required><br><br>
+
+                <button type="submit">Ver Estado</button>
+            </form>
+        
+        <!-- Sección de otras solicitudes -->
+        
+            <h3>Otras Solicitudes</h3>
+            <form action="" method="POST">
+                <label for="tipo_solicitud">Tipo de Solicitud:</label>
+                <select id="tipo_solicitud" name="tipo_solicitud" required>
+                    <option value="solicitud_datos">Solicitud de Datos</option>
+                    <option value="autorizacion_datos">Autorización de Datos</option>
+                </select><br><br>
+
+                <label for="mensaje">Descripción de la Solicitud:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea><br><br>
+
+                <button type="submit">Enviar Solicitud</button>
+            </form>
+        </section>
+    
+</body>
+</html>
