@@ -176,3 +176,7 @@ section h3 {
             display: block; 
             margin: 20px auto;  
 }
+
+#usuario_registrado {
+    display: inherit;
+}

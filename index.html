@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-
     <nav>
         <ul>
             <li><a href="./pages/contacto.html">Contacto</a></li>
@@ -15,10 +14,12 @@
             <li><a href="./pages/citas/pagos_y_rembolso.html">Pagos y Reembolsos</a></li>
             <li><a href="./pages/citas/solicitudes_autorizaciones.html">Solicitudes y Autorizaciones</a></li>
             <li><a href="./pages/usuario/inicio_sesion.html">inicio de sesion</a></li>
-        </ul>
+            <li id="usuario_registrado" style="display: none;"></li>
+            <li > <input type="submit" id="cerrar_Sesion" style="display: none;" value="Cerrar Sesion"></li>
+       </ul>
     </nav>
 
-    <div id="admin-section" style="display:none;">
+    <div id="admin-section" style="display: none;">
         <h2>Sección de Administrador</h2>
         <p>Opciones exclusivas para administradores.</p>
         <ul>
@@ -26,8 +27,6 @@
             <li><a href="">Gestión de Usuarios</a></li>
         </ul>
     </div>
-
-    <script src="funcion_de_administrador.js" async></script>
 
     <img src="./img/banner.jpeg" alt="banner" class = "banner">
 
@@ -163,6 +162,7 @@
             Correo electrónico: CitasExpress@gmail.com<br>
         </p>
     </div>
+    <script src="./js/usuario/usuario_actual.js"></script>
     
 </body>
 </html>
