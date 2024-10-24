@@ -32,34 +32,44 @@
     }
   </style>
   <body>
-    <div class="login-container">
-      <h1>Iniciar Sesión</h1>
-      <form action=" " method="post">
-        <label for="usuario">Correo:</label><br />
-        <input type="text" id="usuario" name="usuario" required /><br /><br />
-        <label for="contrasena">Contraseña:</label><br />
-        <input
-          type="password"
-          id="password"
-          name="password"
-          required
-        /><br /><br />
-        <input type="submit" value="Iniciar Sesión" id="login" />
-        <div id="loading-spinner"></div>
-        <div id="error-message">
-          Credenciales incorrectas, por favor intenta nuevamente.
-        </div>
-      </form>
-      <p>
-        ¿Olvidaste tu contraseña?
-        <a href="./codigo_verificacion.html">Recupérala aquí →</a>
-      </p>
-      <br />
-      <p>
-        ¿No tienes una cuenta? <a href="./Registro.html">Regístrate aquí →</a>
-      </p>
-    </div>
+    <div class="login_all">
+      <div class="login_image">
 
+      </div>
+
+      <div class="login-container">
+        <div class="logo-text">
+          <p><i class="fa-solid fa-calendar"></i> CITAS EXPRESS</p>
+          <a class="register-button" href="./Registro.html">Registrarse</a>
+        </div>
+       
+        <form action=" " method="post">
+          <h1>Iniciar Sesión</h1>
+          <label for="usuario">Correo:</label><br/>
+          <input type="text" id="usuario" name="usuario" required /><br/><br />
+          <label for="contrasena">Contraseña:</label><br/>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+          /><br /><br />
+          <input class="inicia_sesion_buttom" type="submit" value="Iniciar Sesión" id="login" />
+          <div id="loading-spinner"></div>
+          <div id="error-message">
+            Credenciales incorrectas, por favor intenta nuevamente.
+          </div>
+          <p class="xd">
+            ¿Olvidaste tu contraseña?
+            <a href="./codigo_verificacion.html">Recupérala aquí →</a>
+          </p>
+          <br />
+        </form>
+
+      </div>
+    </div>
+    
     <script src="../../js/usuario/iniciar_sesion.js"></script>
+    <script src="https://kit.fontawesome.com/4d98373447.js" crossorigin="anonymous"></script>
   </body>
 </html>

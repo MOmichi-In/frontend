@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presentación EPS - CitasExpress</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
     <nav>
@@ -13,12 +13,18 @@
             <li><a href="./pages/citas/agenda_citas.html">Agenda Citas</a></li>
             <li><a href="./pages/citas/pagos_y_rembolso.html">Pagos y Reembolsos</a></li>
             <li><a href="./pages/citas/solicitudes_autorizaciones.html">Solicitudes y Autorizaciones</a></li>
-            <li><a href="./pages/usuario/inicio_sesion.html">inicio de sesion</a></li>
+        </ul>
+        <ul class="user_sesion">
+            <li id="iniciar_sesion"><a href="./pages/usuario/inicio_sesion.html">Iniciar Sesion</a></li>
             <li id="usuario_registrado" style="display: none;"></li>
-            <li > <input type="submit" id="cerrar_Sesion" style="display: none;" value="Cerrar Sesion"></li>
-       </ul>
+            <li id="content_user" style="display: none;">
+                <div class="circle" id="userCircle">U</div>
+                <div class="dropdown-content" id="menuContent" style="display: none;">
+                    <a href="#" id="cerrar_Sesion">Cerrar Sesión</a>
+                </div>
+            </li>
+        </ul>
     </nav>
-
     <div id="admin-section" style="display: none;">
         <h2>Sección de Administrador</h2>
         <p>Opciones exclusivas para administradores.</p>
