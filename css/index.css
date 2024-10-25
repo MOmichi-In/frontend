@@ -2,7 +2,7 @@
 body {
     font-family: 'Arial', sans-serif;
     padding: 0;
-    background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+    background-color: #cffce8;
     color: #333;
     line-height: 1.6;
     display: flex;
@@ -56,17 +56,16 @@ ul {
 
 /* Enlaces */
 a {
-    color: #00796b; 
+    color: #035142; 
     text-decoration: none;
     transition: color 0.3s ease, text-shadow 0.3s ease;
     font-weight: bold;
-}
-
-a:hover {
-    color: #01579b; 
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
-
-}
+  }
+  
+  a:hover {
+    color: #009d76; 
+  
+  }
 
 /* Botones */
 .button {

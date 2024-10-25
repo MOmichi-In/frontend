@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="../../pages/contacto.html">Contacto</a></li>
+            <li><a href="../../pages/citas/agenda_citas.html">Agenda Citas</a></li>
+            <li><a href="../../pages/citas/pagos_y_rembolso.html">Pagos y Reembolsos</a></li>
+            <li><a href="../../pages/citas/solicitudes_autorizaciones.html">Solicitudes y Autorizaciones</a></li>
+        </ul>
+        <ul class="user_sesion">
+            <li id="iniciar_sesion"><a href="../../pages/usuario/inicio_sesion.html">Iniciar Sesion</a></li>
+            <li id="usuario_registrado" style="display: none;"></li>
+            <li id="content_user" style="display: none;">
+                <div class="circle" id="userCircle">U</div>
+                <div class="dropdown-content" id="menuContent" style="display: none;">
+                    <a href="#" id="cerrar_Sesion">Cerrar Sesión</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="sidebar">
+            <h2>Opciones</h2>
+            <ul>
+                <li onclick="showContent('opcion1')"><i class="fa-solid fa-users"></i> Gestion Usuarios</li>
+                <li onclick="showContent('opcion2')"><i class="fa-solid fa-calendar"></i> Gestion Citas</li>
+            </ul>
+        </div>
+        <div class="content">
+            <div id="displayArea">
+                Selecciona una opción del menú.
+            </div>
+        </div>
+    </div>
+    <script src="../../js/administrador/dashboard.js"></script>
+    <script src="../../js/usuario/usuario_actual.js"></script>
+    <script src="../../js/administrador/user_list.js"></script>
+    <script src="https://kit.fontawesome.com/4d98373447.js" crossorigin="anonymous"></script>
+</body>
+</html>

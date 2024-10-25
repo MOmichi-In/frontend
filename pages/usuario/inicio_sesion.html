@@ -32,6 +32,24 @@
     }
   </style>
   <body>
+    <nav>
+      <ul>
+          <li><a href="../../pages/contacto.html">Contacto</a></li>
+          <li><a href="../../pages/citas/agenda_citas.html">Agenda Citas</a></li>
+          <li><a href="../../pages/citas/pagos_y_rembolso.html">Pagos y Reembolsos</a></li>
+          <li><a href="../../pages/citas/solicitudes_autorizaciones.html">Solicitudes y Autorizaciones</a></li>
+      </ul>
+      <ul class="user_sesion">
+          <li id="iniciar_sesion"><a href="../../pages/usuario/inicio_sesion.html">Iniciar Sesion</a></li>
+          <li id="usuario_registrado" style="display: none;"></li>
+          <li id="content_user" style="display: none;">
+              <div class="circle" id="userCircle">U</div>
+              <div class="dropdown-content" id="menuContent" style="display: none;">
+                  <a href="#" id="cerrar_Sesion">Cerrar Sesión</a>
+              </div>
+          </li>
+      </ul>
+  </nav>
     <div class="login_all">
       <div class="login_image">
 
@@ -45,15 +63,15 @@
        
         <form action=" " method="post">
           <h1>Iniciar Sesión</h1>
-          <label for="usuario">Correo:</label><br/>
-          <input type="text" id="usuario" name="usuario" required /><br/><br />
-          <label for="contrasena">Contraseña:</label><br/>
+          <label for="usuario">Correo:</label>
+          <input type="text" id="usuario" name="usuario" required />
+          <label for="contrasena">Contraseña:</label>
           <input
             type="password"
             id="password"
             name="password"
             required
-          /><br /><br />
+          />
           <input class="inicia_sesion_buttom" type="submit" value="Iniciar Sesión" id="login" />
           <div id="loading-spinner"></div>
           <div id="error-message">
@@ -63,7 +81,7 @@
             ¿Olvidaste tu contraseña?
             <a href="./codigo_verificacion.html">Recupérala aquí →</a>
           </p>
-          <br />
+         
         </form>
 
       </div>

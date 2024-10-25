@@ -1,3 +1,4 @@
+
 async function login(username, password) {
   const formData = new URLSearchParams();
   formData.append("username", username);
@@ -19,9 +20,7 @@ async function login(username, password) {
     const data = await response.json();
 
     if (data.access_token) {
-      console.log("Token recibido:", data.access_token);
       localStorage.setItem("access_token", data.access_token);
-
       // Redirigir al index.html si las credenciales son correctas
       window.location.href = "http://127.0.0.1:5500/index.html";
     } else {
