@@ -7,6 +7,31 @@
     <link rel="stylesheet" href="../../css/dashboard.css">
 </head>
 <body>
+    <style>
+        #loading-spinner {
+          display: none;
+          border: 4px solid #f3f3f3;
+          border-radius: 50%;
+          border-top: 4px solid #3498db;
+          width: 30px;
+          height: 30px;
+          animation: spin 1s linear infinite;
+        }
+    
+        @keyframes spin {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+    
+        #error-message {
+          display: none;
+          color: red;
+        }
+      </style>
 
     <nav>
         <ul>
@@ -33,8 +58,8 @@
 
             <a  href="#users" onclick="toggleDropdown()"><i class="fa-solid fa-user-shield"></i> Gestion de usuarios</a>
             <div class="dropdown-container" id="usuarios-menu">
-              <a  href="#crear-usuario"><i class="fa-solid fa-user-plus"></i> Crear Usuario</a>
-              <a onclick="showContent('opcion1')" href="#listusers"><i class="fa-solid fa-users-gear"></i> Listar Usuarios</a>
+              <a onclick="showContent('opcion3')"  href="#crear-usuario"><i class="fa-solid fa-user-plus"></i> Crear Usuario</a>
+              <a onclick="showContent('opcion1')" href="#listusers"><i class="fa-solid fa-users-gear"></i> Listar Pacientes</a>
             </div>
             <a  href="#dating" onclick="toggleDropdownDating()"><i class="fa-solid fa-calendar"></i> Gestion de citas</a>
             <div class="dropdown-container" id="dating-menu">

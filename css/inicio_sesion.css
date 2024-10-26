@@ -1,88 +1,96 @@
 /* Estilo global */
-body, html {
-    height: 100vh;
-    width: 100vw;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #cffce8;
-    font-family: Arial, sans-ser if;
-  }
-  
-  /* contenedor principal */
-  .login-container{
-    background-color: #ffffff;
-    width: 50%;
-    height: 98%;
-    border-radius: 0 12px 12px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  /* Encabezado */
-  h1, h3 {
-    color: #035142; 
-    margin: 3rem;
-    width: 40%;
-    text-align: center;
-  }
-  
-  label {
-    font-weight: bold;
-    width: 40%;
-    color: #575757ad; 
-    
-  }
-  /* Formularios */
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 90%;
-    
-  }
-  
-  input, textarea, select {
-    width: 40%;
-    padding: 10px;
-    margin: 1rem 0 1rem 0 ;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    border-radius: 10px;
-  }
+body,
+html {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #cffce8;
+  font-family: Arial, sans-ser if;
+}
 
-  .inicia_sesion_buttom {
-    background-color: rgb(0, 111, 92);
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Transición solo para el color de fondo */
+/* contenedor principal */
+.login-container {
+  background-color: #ffffff;
+  width: 50%;
+  height: 98%;
+  border-radius: 0 12px 12px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Encabezado */
+h1,
+h3 {
+  color: #035142;
+  margin: 3rem;
+  width: 40%;
+  text-align: center;
+}
+
+label {
+  font-weight: bold;
+  width: 40%;
+  color: #575757ad;
+
+}
+
+/* Formularios */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90%;
+
+}
+
+input,
+textarea,
+select {
+  width: 40%;
+  padding: 10px;
+  margin: 1rem 0 1rem 0;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.inicia_sesion_buttom {
+  background-color: rgb(0, 111, 92);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  /* Transición solo para el color de fondo */
 }
 
 .inicia_sesion_buttom:hover {
-    background-color: rgb(0, 182, 152); /* Cambia solo el color de fondo */
+  background-color: rgb(0, 182, 152);
+  /* Cambia solo el color de fondo */
 }
-  button {
-    width: 100%;
-    padding: 12px;
-   
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 1em;
-  }
-  
-  button:hover {
-    background-color: #00332a; 
-  }
-  
-  /* Navegación */
- 
-  
-  /* imagenes - fondo */
-  
+
+button {
+  width: 100%;
+  padding: 12px;
+
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+button:hover {
+  background-color: #00332a;
+}
+
+/* Navegación */
+
+
+/* imagenes - fondo */
+
 
 .login_image {
   width: 50%;
@@ -104,7 +112,7 @@ body, html {
 .logo-text p {
   font-size: 0.9rem;
   width: 20%;
-  height: 40%;  
+  height: 40%;
   margin: .2rem;
 }
 
@@ -118,7 +126,7 @@ body, html {
 .register-button {
   font-size: 0.9rem;
   width: 20%;
-  height: 40%;  
+  height: 40%;
   margin: .2rem;
   color: #575757ad;
   cursor: pointer;
@@ -134,7 +142,7 @@ body, html {
 }
 
 nav {
-  background-color:  #ffffff;
+  background-color: #ffffff;
   padding: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
@@ -160,14 +168,15 @@ nav a {
   padding: 10px 15px;
   border-radius: 5px;
 }
+
 a {
-  color: #035142; 
+  color: #035142;
   text-decoration: none;
   transition: color 0.3s ease, text-shadow 0.3s ease;
   font-weight: bold;
 }
 
 a:hover {
-  color: #009d76; 
+  color: #009d76;
 
 }

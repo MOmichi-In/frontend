@@ -7,17 +7,38 @@
     <link rel="stylesheet" href="../../css/registrar.css" />
   </head>
   <body>
+
+    <nav>
+      <ul>
+          <li><a href="../../pages/contacto.html">Contacto</a></li>
+          <li><a href="../../pages/citas/agenda_citas.html">Agenda Citas</a></li>
+          <li><a href="../../pages/citas/pagos_y_rembolso.html">Pagos y Reembolsos</a></li>
+          <li><a href="../../pages/citas/solicitudes_autorizaciones.html">Solicitudes y Autorizaciones</a></li>
+      </ul>
+      <ul class="user_sesion">
+          <li id="iniciar_sesion"><a href="../../pages/usuario/inicio_sesion.html">Iniciar Sesion</a></li>
+          <li id="usuario_registrado" style="display: none;"></li>
+          <li id="content_user" style="display: none;">
+              <div class="circle" id="userCircle">U</div>
+              <div class="dropdown-content" id="menuContent" style="display: none;">
+                  <a href="#" id="cerrar_Sesion">Cerrar Sesión</a>
+              </div>
+          </li>
+      </ul>
+  </nav>
     <div class="login-container">
-      <h1>Registro</h1>
+
       <form action=" " method="POST">
+        <h1>Registro</h1>
         <label for="username">Cedula:</label>
         <input type="text" id="cedula" name="username" required />
         <button type="submit" id="register">Registrarse</button>
+        <p>
+          ¿Ya tienes una cuenta?
+          <a href="./inicio_sesion.html">inicia sesion aquí</a>
+        </p>
       </form>
-      <p>
-        ¿Ya tienes una cuenta?
-        <a href="./inicio_sesion.html">inicia sesion aquí →</a>
-      </p>
+     
     </div>
     <script src="../../js/usuario/registrar.js"></script>
   </body>
