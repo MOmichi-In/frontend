@@ -30,10 +30,17 @@
     <div class="container">
         <div class="sidebar">
             <h2>Opciones</h2>
-            <ul>
-                <li onclick="showContent('opcion1')"><i class="fa-solid fa-users"></i> Gestion Usuarios</li>
-                <li onclick="showContent('opcion2')"><i class="fa-solid fa-calendar"></i> Gestion Citas</li>
-            </ul>
+
+            <a  href="#users" onclick="toggleDropdown()"><i class="fa-solid fa-user-shield"></i> Gestion de usuarios</a>
+            <div class="dropdown-container" id="usuarios-menu">
+              <a  href="#crear-usuario"><i class="fa-solid fa-user-plus"></i> Crear Usuario</a>
+              <a onclick="showContent('opcion1')" href="#listusers"><i class="fa-solid fa-users-gear"></i> Listar Usuarios</a>
+            </div>
+            <a  href="#dating" onclick="toggleDropdownDating()"><i class="fa-solid fa-calendar"></i> Gestion de citas</a>
+            <div class="dropdown-container" id="dating-menu">
+              <a  href="#crear-dating"><i class="fa-solid fa-calendar-plus"></i> Crear Cita</a>
+              <a onclick="showContent('opcion2')" href="#crear-dating"><i class="fa-solid fa-calendar-days"></i> Listar Citas</a>
+            </div>
         </div>
         <div class="content">
             <div id="displayArea">

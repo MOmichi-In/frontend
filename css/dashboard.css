@@ -55,6 +55,34 @@ h3 {
     transition: background-color 0.3s ease;
 }
 
+.sidebar a {
+    color: white;
+    width: 100%;
+    text-align: left;
+    border-radius: 25px;
+      display: block;
+      text-decoration: none;
+      cursor: pointer;
+}
+
+
+
+.sidebar a:hover {
+    background-color: #009d76;
+    transition: background-color 0.3s ease;
+}
+
+
+.dropdown-container {
+    display: none;
+
+    padding-left: 20px;
+  }
+  .sidebar a {
+    padding: 10px;
+    display: block;
+  }
+
 .content {
     flex: 1;
     padding: 20px;
@@ -98,14 +126,14 @@ nav {
     padding: 10px 15px;
     border-radius: 5px;
   }
-  a {
+  nav a {
     color: #035142; 
     text-decoration: none;
     transition: color 0.3s ease, text-shadow 0.3s ease;
     font-weight: bold;
   }
   
-  a:hover {
+ nav a:hover {
     color: #009d76; 
   
   }
