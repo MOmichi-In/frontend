@@ -63,13 +63,6 @@ function verificar_user() {
                        if(window.location.href != "http://localhost:5500/pages/administrador/dashboard.html"){
                         window.location.href = "http://localhost:5500/pages/administrador/dashboard.html";
                     }
-                    
-                } else{
-                    if(window.location.href != "http://localhost:5500/index.html"){
-                    window.location.href = "http://localhost:5500/index.html";
-
-                    }
-                    
                 }
             } else {
                 window.location.href = "http://localhost:5500/index.html"
