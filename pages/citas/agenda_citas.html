@@ -7,6 +7,31 @@
     <link rel="stylesheet" href="../../css/agendar_citas.css">
 </head>
 <body>
+    <style>
+        #loading-spinner {
+          display: none;
+          border: 4px solid #f3f3f3;
+          border-radius: 50%;
+          border-top: 4px solid #3498db;
+          width: 30px;
+          height: 30px;
+          animation: spin 1s linear infinite;
+        }
+    
+        @keyframes spin {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+    
+        #error-message {
+          display: none;
+          color: red;
+        }
+      </style>
     <nav>
         <ul>
             <li><a href="../../pages/contacto.html">Contacto</a></li>
@@ -51,6 +76,8 @@
 
                 </select>
                 <input type="submit" id="agendar">
+                <div id="loading-spinner"></div>
+                <div id="error-message">
             </form>
 
             <div>

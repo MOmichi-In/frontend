@@ -6,6 +6,8 @@ const agendar = document.getElementById('agendar')
 
 agendar.addEventListener("click", async (e) => {
     e.preventDefault()
+    document.getElementById("loading-spinner").style.display = "inline-block";
+    document.getElementById("error-message").style.display = "none"; // Ocultar mensaje de error si existe
     try {
         const response = await fetch('http://localhost:8000/users/me', {
             method: 'GET',
@@ -17,12 +19,14 @@ agendar.addEventListener("click", async (e) => {
 
         // Verifica si la respuesta es exitosa
         if (!response.ok) {
+            document.getElementById("loading-spinner").style.display = "none";
+            document.getElementById("error-message").style.display = "block"; // Ocultar mensaje de error si existe
             throw new Error('Error en la solicitud: ' + response.statusText);
         }
 
         const data = await response.json();
         const user = data.user; // Guarda el campo user en una variable
-        console.log('Usuario:', user); // Imprime el usuario en la consola
+        
 
 
         
@@ -46,20 +50,35 @@ agendar.addEventListener("click", async (e) => {
 
         // Verifica si la respuesta es exitosa
         if (!response.ok) {
+            document.getElementById("loading-spinner").style.display = "none";
+            document.getElementById("error-message").style.color = "red"; 
+            document.getElementById("error-message").innerText = "Error al agendar cita"; 
+            document.getElementById("error-message").style.display = "block"; // Ocultar mensaje de error si existe
             throw new Error('Error en la solicitud: ' + response.statusText);
         }
 
         const data = await response.json();
-        console.log('Cita agendada:', data);
-        return data; // Retorna la respuesta del servidor
+        document.getElementById("loading-spinner").style.display = "none";
+        document.getElementById("error-message").innerText = "Cita Agendada correctamente"; 
+        document.getElementById("error-message").style.color = "green"; 
+        // Ocultar mensaje de error si existe
+        document.getElementById("error-message").style.display = "block"; // Ocultar mensaje de error si existe
 
     } catch (error) {
+        document.getElementById("loading-spinner").style.display = "none";
+        document.getElementById("error-message").style.color = "red"; 
+        document.getElementById("error-message").innerText = "Error al agendar cita"; 
+        document.getElementById("error-message").style.display = "block"; // Ocultar mensaje de error si existe
         console.error('Error:', error);
         return null; // Retorna null en caso de error
     }
         
 
     } catch (error) {
+        document.getElementById("loading-spinner").style.display = "none";
+        document.getElementById("error-message").style.color = "red"; 
+        document.getElementById("error-message").innerText = "Eror al agendar cita"; 
+        document.getElementById("error-message").style.display = "block"; // Ocultar mensaje de error si existe
         console.error('Error:', error);
         
     }
