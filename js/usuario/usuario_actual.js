@@ -28,7 +28,7 @@ window.addEventListener('click', function (event) {
     }
 });
 function verificar_user() {
-    fetch('http://localhost:8000/users/me', {
+    fetch('https://citas-express.vercel.app/users/me', {
         method: 'GET',
         headers: {
             'accept': 'application/json',

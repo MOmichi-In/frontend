@@ -2,7 +2,7 @@ async function recuperar_contraseña(cedula) {
     const formData = new URLSearchParams();
     formData.append("user_client", cedula); // Reemplaza con tu username
   
-    fetch("http://localhost:8000/user/code_verification", {
+    fetch("https://citas-express.vercel.app/user/code_verification", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",

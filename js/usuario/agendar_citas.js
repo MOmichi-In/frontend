@@ -9,7 +9,7 @@ agendar.addEventListener("click", async (e) => {
     document.getElementById("loading-spinner").style.display = "inline-block";
     document.getElementById("error-message").style.display = "none"; // Ocultar mensaje de error si existe
     try {
-        const response = await fetch('http://localhost:8000/users/me', {
+        const response = await fetch('https://citas-express.vercel.app/users/me', {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
@@ -39,7 +39,7 @@ agendar.addEventListener("click", async (e) => {
     };
 
     try {
-        const response = await fetch('http://localhost:8000/admin/assigned_dating', {
+        const response = await fetch('https://citas-express.vercel.app/admin/assigned_dating', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -137,7 +137,7 @@ fecha.addEventListener('change', async (e) => {
 
 async function doctores() {
     try {
-        const response = await fetch('http://localhost:8000/admin/doctor/speciality', {
+        const response = await fetch('https://citas-express.vercel.app/admin/doctor/speciality', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -165,7 +165,7 @@ async function doctores() {
 
 async function obtenerHorarios() {
     try {
-        const response = await fetch(`http://localhost:8000/admin/dating/list-filter?date_=${fecha.value}&speciality=${area.value}&doctor_=${medico.value}`, {
+        const response = await fetch(`https://citas-express.vercel.app/admin/dating/list-filter?date_=${fecha.value}&speciality=${area.value}&doctor_=${medico.value}`, {
             method: 'GET',
             headers: {
                 'Accept': 'application/json'

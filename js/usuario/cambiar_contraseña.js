@@ -6,7 +6,7 @@ async function cambiar_contraseña(cedula, password, codigo) {
     formData.append("new_password", password); // Reemplaza con tu password
     formData.append("code", codigo); // Reemplaza con tu username
   
-    fetch("http://localhost:8000/user/changed_password", {
+    fetch("https://citas-express.vercel.app/user/changed_password", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",

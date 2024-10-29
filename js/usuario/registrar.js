@@ -2,7 +2,7 @@ async function register(Cedula) {
   const formData = new URLSearchParams();
   formData.append("user_client", Cedula); // Reemplaza con tu username
 
-  fetch("http://localhost:8000/user/register", {
+  fetch("https://citas-express.vercel.app/user/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",

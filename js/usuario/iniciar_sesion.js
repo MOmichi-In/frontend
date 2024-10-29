@@ -9,7 +9,7 @@ async function login(username, password) {
   document.getElementById("error-message").style.display = "none"; // Ocultar mensaje de error si existe
 
   try {
-    const response = await fetch("http://localhost:8000/token", {
+    const response = await fetch("https://citas-express.vercel.app/token", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",

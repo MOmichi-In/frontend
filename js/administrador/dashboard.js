@@ -7,7 +7,7 @@ function showContent(option) {
 
 
     function user_list() {
-        fetch('http://localhost:8000/admin/user/list', {
+        fetch('https://citas-express.vercel.app/admin/user/list', {
             method: 'GET',
             headers: {
                 'accept': 'application/json',
@@ -45,7 +45,7 @@ function showContent(option) {
 
 
     function dating_list() {
-        fetch('http://localhost:8000/admin/dating/list', {
+        fetch('https://citas-express.vercel.app/admin/dating/list', {
             method: 'GET',
             headers: {
                 'accept': 'application/json',
@@ -132,7 +132,7 @@ function create_user() {
     const speciality = document.getElementById('speciality');
     
     if (rol.value == '1') {
-        fetch('http://localhost:8000/admin/user/create', {
+        fetch('https://citas-express.vercel.app/admin/user/create', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -174,7 +174,7 @@ function create_user() {
     
     } else if (rol.value == '2') {
 
-        fetch('http://localhost:8000/admin/doctor/create', {
+        fetch('https://citas-express.vercel.app/admin/doctor/create', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
