@@ -60,12 +60,14 @@
             <div class="dropdown-container" id="usuarios-menu">
               <a onclick="showContent('opcion3')"  href="#crear-usuario"><i class="fa-solid fa-user-plus"></i> Crear Usuario</a>
               <a onclick="showContent('opcion1')" href="#listusers"><i class="fa-solid fa-users-gear"></i> Listar Pacientes</a>
+              <a onclick="showContent('opcion4')" href="#listdocs"><i class="fa-solid fa-user-doctor"></i> Listar Doctores</a>
             </div>
             <a  href="#dating" onclick="toggleDropdownDating()"><i class="fa-solid fa-calendar"></i> Gestion de citas</a>
             <div class="dropdown-container" id="dating-menu">
-              <a  href="#crear-dating"><i class="fa-solid fa-calendar-plus"></i> Crear Cita</a>
+              <a  href="#crear-dating" onclick="showContent('opcion5')"><i class="fa-solid fa-calendar-plus"></i> Crear Cita</a>
               <a onclick="showContent('opcion2')" href="#crear-dating"><i class="fa-solid fa-calendar-days"></i> Listar Citas</a>
             </div>
+
         </div>
         <div class="content">
             <div id="displayArea">

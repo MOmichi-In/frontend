@@ -1,10 +1,120 @@
 function showContent(option) {
     const displayArea = document.getElementById('displayArea');
 
+    function doctor_list(){
+        fetch('https://citas-express.vercel.app/admin/doctor/list', {
+            method: 'GET',
+            headers: {
+              'Accept': 'application/json'
+            }
+          })
+            .then(response => {
+              if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+              }
+              return response.json();
+            })
+            .then(data => {
+                const doctorTableBody = document.querySelector('#doctorTable tbody');
+                doctorTableBody.innerHTML = '';  // Limpiar la tabla antes de agregar nuevos datos
+
+                data.forEach(doctor => {
+                    const row = document.createElement('tr');
+                    row.classList.add('rounded-row');
+                    row.innerHTML = `
+                <td>${doctor.user}</td>
+                <td>${doctor.name}</td>
+                <td>${doctor.speciality == 3 ? 'Medicina General'   : 'Pediatria'}</td>
+
+            `;
+            doctorTableBody.appendChild(row);
+                });
+            })
+            .catch(error => {
+              console.error('There was an error with the request:', error);
+            });
+          
+    }
 
 
+    function loadDoctorsBySpeciality(speciality) {
+        const doctorSelect = document.getElementById('doctor-canva');
+        doctorSelect.innerHTML = '<option value="">Cargando doctores...</option>'; // Indicador visual
+    
+        fetch('https://citas-express.vercel.app/admin/doctor/speciality', {
+            method: 'POST',
+            headers: {
+                'accept': 'application/json',
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `doctors_speciality=${speciality}`,
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error en la respuesta: ' + response.status);
+                }
+                return response.json();
+            })
+            .then(data => {
+                doctorSelect.innerHTML = ''; // Limpiar antes de añadir opciones
+                if (data.length > 0) {
+                    data.forEach(doctor => {
+                        const option = document.createElement('option');
+                        option.value = doctor.user;
+                        option.textContent = `${doctor.name}`;
+                        doctorSelect.appendChild(option);
+                    });
+                } else {
+                    const noOption = document.createElement('option');
+                    noOption.value = '';
+                    noOption.textContent = 'No hay doctores disponibles';
+                    doctorSelect.appendChild(noOption);
+                }
+            })
+            .catch(error => {
+                console.error('Error al cargar doctores:', error);
+                doctorSelect.innerHTML = '<option value="">Error al cargar doctores</option>';
+            });
+    }
 
-
+    function loadAvailableTimes(doctorId, date) {
+        const horaSelect = document.getElementById('hora-select');
+        horaSelect.innerHTML = '<option value="">Cargando horas...</option>'; // Indicador visual
+    
+        fetch(`https://citas-express.vercel.app/admin/doctor/schedule/list?doctors_id=${doctorId}&date_=${date}`, {
+            method: 'GET',
+            headers: {
+                'accept': 'application/json',
+            },
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error en la respuesta: ' + response.status);
+                }
+                return response.json();
+            })
+            .then(data => {
+                horaSelect.innerHTML = ''; // Limpiar el select antes de añadir opciones
+                console.log(data.schedule)
+                if (data.schedule.length > 0) {
+                    data.schedule.forEach(time => {
+                        if(!time[1]){
+                        const option = document.createElement('option');
+                        option.value = time[0];
+                        option.textContent = time[0];
+                        horaSelect.appendChild(option);
+                        }
+                        
+                    });
+                } else {
+                    horaSelect.innerHTML = '<option value="">No hay horas disponibles</option>';
+                }
+            })
+            .catch(error => {
+                console.error('Error al cargar las horas:', error);
+                horaSelect.innerHTML = '<option value="">Error al cargar horas</option>';
+            });
+    }
 
     function user_list() {
         fetch('https://citas-express.vercel.app/admin/user/list', {
@@ -116,9 +226,124 @@ function showContent(option) {
             })
 
             break;
+        case 'opcion4':
+            doctor_list()
+            displayArea.innerHTML = '<h3>Lista de doctores</h3><table id="doctorTable"> <thead><tr ><th><i class="fa-solid fa-id-card"></i> User</th><th><i class="fa-solid fa-user"></i> Nombre</th><th><i class="fa-solid fa-briefcase"></i> Especialidad</th></thead><tbody></tbody></table>';
+            break
+        case 'opcion5':
+            displayArea.innerHTML = `
+                <h3 id="create-title">Crear Cita</h3>
+                <form action="" id="form-dating-create">
+                    <label for="especialidad">Especialidad</label>
+                    <select name="especialidad" id="especialidad">
+                        <option value="1">Pediatría</option>
+                        <option value="3">Medicina General</option>
+                    </select>
+                    <label for="doctor">Doctor</label>
+                    <select name="doctor" id="doctor-canva"></select>
+                    <label for="fecha">Fecha</label>
+                    <input id="fecha-input" type="date" name="fecha">
+                    <label for="hora">Hora</label>
+                    <select name="hora" id="hora-select">
+                        <option value="">Selecciona una hora</option>
+                    </select>
+                    <input type="submit" value="Crear" id="create-dating">
+                    <div id="loading-spinner"></div>
+                    <div id="error-message"></div>
+                </form>
+            `;
+        
+            const especialidad = document.getElementById('especialidad');
+            const doctorSelect = document.getElementById('doctor-canva');
+            const fechaInput = document.getElementById('fecha-input');
+            const horaSelect = document.getElementById('hora-select');
+            const createDatingButton = document.getElementById('create-dating');
+        
+            // Cargar doctores cuando se cambia la especialidad
+            especialidad.addEventListener('change', () => {
+                const selectedSpeciality = especialidad.value;
+                loadDoctorsBySpeciality(selectedSpeciality);
+            });
+        
+            // Cargar horarios disponibles cuando se selecciona una fecha
+            fechaInput.addEventListener('change', () => {
+                const selectedDoctorId = doctorSelect.value;
+                const selectedDate = fechaInput.value;
+        
+                if (selectedDoctorId && selectedDate) {
+                    loadAvailableTimes(selectedDoctorId, selectedDate);
+                }
+            });
+        
+            // Crear cita al presionar el botón "Crear"
+            createDatingButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                createDating(doctorSelect.value, fechaInput.value, horaSelect.value, especialidad.value);
+            });
+        
+            break;
         default:
             displayArea.innerHTML = 'Selecciona una opción del menú.';
     }
+}
+
+function createDating(selectedDoctorId, selectedDate, selectedHour, selectedSpeciality) {
+
+
+    if (!selectedDoctorId || !selectedDate || !selectedHour || !selectedSpeciality) {
+        document.getElementById('error-message').innerText = 'Por favor completa todos los campos.';
+        document.getElementById('error-message').style.color = 'red';
+        return;
+    }
+
+    document.getElementById("loading-spinner").style.display = "inline-block";
+    document.getElementById("error-message").style.display = "none";
+
+    fetch('https://citas-express.vercel.app/admin/dating/create', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + localStorage.getItem("access_token")
+        },
+        body: JSON.stringify({
+            date_: selectedDate,
+            doctor: selectedDoctorId,
+            time: selectedHour,
+            speciality: selectedSpeciality
+        })
+    })
+    .then(response => {
+        document.getElementById("loading-spinner").style.display = "none";
+
+        if (response.status === 401) {
+            if (window.location.href !== "http://127.0.0.1:5500/index.html") {
+                window.location.href = "http://127.0.0.1:5500/index.html";
+            }
+        } else if (response.ok) {
+            document.getElementById("error-message").style.color = "green";
+            document.getElementById("error-message").innerText = "Cita creada correctamente.";
+            document.getElementById("error-message").style.display = "block";
+        } else {
+            document.getElementById("error-message").style.color = "red";
+            document.getElementById("error-message").innerText = "Error al crear la cita.";
+            document.getElementById("error-message").style.display = "block";
+        }
+    })
+    .catch(error => {
+        document.getElementById("loading-spinner").style.display = "none";
+        document.getElementById("error-message").style.color = "red";
+        document.getElementById("error-message").innerText = "Error al crear la cita.";
+        document.getElementById("error-message").style.display = "block";
+        console.error('Error al crear la cita:', error);
+    });
+}
+
+function create_date(){
+    date_
+    doctor
+    time
+    speciality
 }
 
 function create_user() {
